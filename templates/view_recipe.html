@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ recipe.title }}
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold">{{ recipe.title }}</h1><br>
+        <div class="alert alert-info text-start">
+            <p class="fs-5 fw-semibold">Ингридиенты:</p>
+            <p class="fs-5 fw-light">{{ recipe.food }}</p>
+            <p class="fs-5 fw-semibold">Приготовление:</p>
+            <p class="fs-5 fw-light">{{ recipe.text }}</p>
+            <p class="fs-6 text-end">Создал: {{ recipe.creator }}<br>Дата: {{ recipe.date.date() }}</p>
+            {% if current_user.login == recipe.creator %}
+                <a href="/user_recipe/{{ recipe.id }}/update" class="btn btn-warning">Редактировать</a>
+                <a href="/user_recipe/{{ recipe.id }}/delete" class="btn btn-primary">Удалить</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Страница про нас
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="px-4 py-5 my-5 text-center">
+    <img src="{{ url_for('static', filename='image/logo.png') }}" align="center">
+    <h1 class="display-5 fw-bold">О сайте</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Здесь вы найдете не только простые и вкусные рецепты прикорма, а также я расскажу как сэкономить время на готовке, разнообразить рацион малыша и ваш, актуальную информацию о вводе прикорма и как осуществить переход на "общий стол"</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a type="button" class="btn btn-primary btn-lg px-4 gap-3" href="/home">О рецептах</a>
+        <a type="button" class="btn btn-outline-secondary btn-lg px-4" href="/all_posts">О прикорме</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

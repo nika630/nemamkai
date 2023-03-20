@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Добавить рецепт
+{% endblock %}
+
+{% block body %}
+<div class="px-4 py-5 my-5 text-center">
+    <div class="col-lg-7 mx-auto">
+        <div class="container">
+            <h1 class="display-6 fw-bolder text-center">✍️ Создать рецепт</h1>
+            <br/>
+            <form method="POST">
+                <input type="text" name="title" id="title" class="form-control" placeholder="Название рецепта"><br>
+                <textarea name="food" id="food" class="form-control" placeholder="Ингредиенты"></textarea><br>
+                <textarea name="text" id="text" class="form-control" placeholder="Инструкция по приготовлению"></textarea><br>
+                <input type="submit" class="btn btn-warning" value="Опубликовать"><br>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

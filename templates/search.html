@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Результаты поиска
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <br>
+    <h1 class="display-5 fw-normal fs-5">Результаты поиска <em>{{ searched }}</em> по названиям рецептов</h1>
+
+    <div class="px-4 py-5 my-5 text-center">
+    <div class="col-lg-7 mx-auto">
+        {% if recipes %}
+            {% for recipe in recipes %}
+                <div class="alert alert-info">
+                    <h2 class="fs-2 fw-bolder">{{ recipe.title }}</h2>
+                    <p class="fs-5 fw-light">{{ recipe.food }}</p>
+                    <p class="fs-6 text-end">Создал: {{ recipe.creator }}<br>Дата: {{ recipe.date.date() }}</p>
+                    <a href="/user_recipe/{{ recipe.id }}" class="btn btn-primary">Подробнее</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="fw-lighter fs-5"> Рецепты не найдены, <br> попробуйте ввести запрос снова с заглавной/строчной буквы...</p>
+        {% endif %}
+
+{% endblock %}

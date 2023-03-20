@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Личный кабинет
+{% endblock %}
+
+{% block body %}
+<br>
+<div class="container">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary"></strong>
+          <h3 class="mb-0">Привет, {{ current_user.usr_name }}! 👋</h3>
+          <br>
+          <p class="card-text mb-auto fs-4">Твой логин: {{ current_user.login }}</p>
+          <p class="card-text mb-auto fs-4">Твой email: {{ current_user.email }}</p> <br/>
+          <div class="mb-1 text-muted fs-6">🕐 Дата регистрации: {{ current_user.date.date() }}</div>
+          <br/><p><a class="btn btn-lg btn-primary" href="{{ url_for('logout')}}">Выйти</a></p>
+        </div>
+        </div>
+          <h1>🥦 Ваши рецепты</h1>
+        {% if usr_recipe == None %}
+            {% for el in usr_recipe %}
+            <div class="alert alert-info">
+                <h2 class="fs-2 fw-bolder">{{ el.title }}</h2>
+                <p class="fs-5 fw-light">{{ el.food }}</p>
+                <p class="fs-6 text-end">Создал: {{ el.creator }}<br>Дата: {{ el.date.date() }}</p>
+                <a href="/user_recipe/{{ el.id }}" class="btn btn-primary">Подробнее</a>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p class="fs-5 fw-light">У вас еще нет созданных рецептов</p>
+            <p><a class="btn btn-lg btn-warning" href="/user_recipe/new_recipe">Создать новый рецепт</a></p>
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}

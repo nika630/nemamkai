@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Статьи
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Добавление статьи</h1>
+    <form action="/create-article" method="post">
+        <input type="text" name="title" id="title" class="form-control" placeholder="Введите название рецепта"><br>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Upload</span>
+          </div>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="inputGroupFile01">
+            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+          </div>
+        </div>
+        <textarea name="text" id="text" class="form-control" placeholder="Введите основной текст"></textarea><br>
+        <input type="submit" class="btn btn-success" value="Отправить"></input><br>
+    </form>
+</div>
+{% endblock %}

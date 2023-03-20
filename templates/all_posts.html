@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Все статьи на сайте
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="fs-3 fw-bold mb-0">😋 Готовим себе и малышу</h3>
+          <br/>
+          <p class="fs-5 fw-light card-text mb-auto">Успеваешь приготовить только малышу, а сама перекусываешь находу и ешь однотипную еду...</p>
+          <br/><p><a class="btn btn-lg btn-primary" href="/all_posts/1">Подробнее</a></p>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="{{ url_for('static', filename='image/post1.jpg') }}" width="250" height="333" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect></svg>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="fs-3 fw-bold mb-0">🥕 Прикорм кусочками</h3>
+          <br/>
+          <p class="fs-5 fw-light card-text mb-auto">Чтобы научить малыша жевать, необходимо вовремя ввести кусочки (не позднее 10 месяцев)...</p>
+          <br/><p><a class="btn btn-lg btn-primary" href="/all_posts/2">Подробнее</a></p>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="{{ url_for('static', filename='image/post2.jpg') }}" width="250" height="333" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="fs-3 fw-bold mb-0">🥑 Готовим сами пюре для прикорма</h3>
+          <br/>
+          <p class="fs-5 fw-light card-text mb-auto">Так сложились звёзды, что я его делаю сама. Сначала...</p>
+          <br/><p><a class="btn btn-lg btn-primary" href="/all_posts/3">Подробнее</a></p>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="{{ url_for('static', filename='image/post3.jpg') }}" width="250" height="333" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect></svg>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="fs-3 fw-bold mb-0">🥦 Когда вводить прикорм?</h3>
+          <br/>
+          <p class="fs-5 fw-light card-text mb-auto">Наши мамы настаивают на начале прикорма в 4 месяца, а многие...</p>
+          <br/><p><a class="btn btn-lg btn-primary" href="/all_posts/4">Подробнее</a></p>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="{{ url_for('static', filename='image/post4.jpg') }}" width="250" height="333" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Вход
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="px-4 py-5 my-5 text-center">
+        <div class="col-lg-4 mx-auto">
+            <div class="container">
+                <h1 class="display-6 fw-bolder text-center">Вход</h1>
+                <br/>
+                <form method="POST">
+                    {{ form.hidden_tag() }}
+                    {{ form.login.label(class="form-label fw-light fs-4") }}
+                    {{ form.login(class="form-control") }}
+
+                    {{ form.password_hash.label(class="form-label fw-light fs-4") }}
+                    {{ form.password_hash(class="form-control") }}
+
+                    {{ form.submit(class="btn btn-outline-primary") }}
+                </form>
+                {% for msg in get_flashed_messages() %}
+                    <div class="alert alert-info alert-dismissible fade show fw-light fs-4" role="alert">
+                      {{ msg }}
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

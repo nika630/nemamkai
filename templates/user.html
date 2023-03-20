@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Вход
+{% endblock %}
+
+{% block body %}
+
+{% if name %}
+    <h1 >Привет, {{ name }}</h1>
+{% else %}
+    <h1 class="display-5 fw-bold">Как вас зовут?</h1>
+    <br/>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.name.label(class="form-label") }}
+        {{ form.name(class="form-control") }}
+        <br/>
+        {{ form.submit(class="btn btn-outline-primary") }}
+    </form>
+{% endif %}
+{% for msg in get_flashed_messages() %}
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+      {{ msg }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+
+{% endblock %}

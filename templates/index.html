@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Главная страница
+{% endblock %}
+
+{% block body %}
+<main>
+<!--Карусель актуальных постов-->
+  <div class="container">
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item carousel-item-next carousel-item-start">
+        <img src="{{ url_for('static', filename='image/firstpage.jpg') }}" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>Не-мамкай!</h1>
+            <p>Простые и быстрые рецепты прикорма.</p>
+            <p><a class="btn btn-lg btn-primary" href="/about">Подробнее</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{{ url_for('static', filename='image/prev_food1.jpg') }}" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Прикорм кусочками</h1>
+            <p>Как перейти с пюре на кусочки?</p>
+            <p><a class="btn btn-lg btn-primary" href="/all_posts/2">Подробнее</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item active carousel-item-start">
+        <img src="{{ url_for('static', filename='image/prev_food2.jpg') }}" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1>Рецепты для малыша и мамы</h1>
+            <p>Как маме сэкономить время и питаться полезно, вкусно и разнообразно?</p>
+            <p><a class="btn btn-lg btn-primary" href="/all_posts/1">Подробнее</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+<!--Сетка рецептов-->
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{ url_for('static', filename='image/food6.jpg') }}" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+            <div class="card-body">
+              <p class="fs-5 fw-lighter card-text">🥦 Брокколи и кабачок кусочками отварить на пару. Добавить пюре из тыквы 20 гр и пюре из кролика</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">8+</button>
+                  <button type="button" class="btn btn-sm btn-primary">месяцев</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{ url_for('static', filename='image/food7.jpg') }}" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+            <div class="card-body">
+              <p class="fs-5 fw-lighter card-text">🥦 Цветную капусту отварить на пару. Добавить пюре свеклы и пюре куриной грудки (домашнее/баночное)</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">8+</button>
+                  <button type="button" class="btn btn-sm btn-primary">8+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{ url_for('static', filename='image/food8.jpg') }}" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+            <div class="card-body">
+              <p class="fs-5 fw-lighter card-text">🥣 Овсяная каша на воде: овсянку отварить с добавлением кураги и банана нарезанных кусочками</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">7+</button>
+                  <button type="button" class="btn btn-sm btn-primary">месяцев</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{ url_for('static', filename='image/food9.jpg') }}" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+            <div class="card-body">
+              <p class="fs-5 fw-lighter card-text">🥦 Куриную грудку отварить, блендировать в пюре с добавлением водю Кабачок нарезать кусочками, морковь натереть на терке и отварить на пару</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">8+</button>
+                  <button type="button" class="btn btn-sm btn-primary">месяцев</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{ url_for('static', filename='image/food10.jpg') }}" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+            <div class="card-body">
+              <p class="fs-5 fw-lighter card-text">🥣 Борщ: брокколи разобрать на соцветия, морковь натереть на тёрке, добавить пюре кролика. За пару минут до приготовления добавить пюре из свеклы и оливковое масло 0.5 ч.л.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">8+</button>
+                  <button type="button" class="btn btn-sm btn-primary">месяцев</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{ url_for('static', filename='image/food11.jpg') }}" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+            <div class="card-body">
+              <p class="fs-5 fw-lighter card-text">🥦 Цветную капусту разобрать на соцветия, кабачок нарезать кусочками. Отварить овощи на пару. Добавить пюре индейки(домашнее/баночное) с добавлением 0.5 ч.л оливкового масла</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">8+</button>
+                  <button type="button" class="btn btn-sm btn-primary">месяцев</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{ url_for('static', filename='image/food12.jpg') }}" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+            <div class="card-body">
+              <p class="fs-5 fw-lighter card-text">🥣 Овсянку отварить. Добавить пюре банана(помять вилкой) и пюре чернослива. Заправить сливочным маслом</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">7+</button>
+                  <button type="button" class="btn btn-sm btn-primary">месяцев</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{ url_for('static', filename='image/food13.jpg') }}" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+            <div class="card-body">
+              <p class="fs-5 fw-lighter card-text">🥣 Кабачок и цветную капусту отварить на пару. Пюрировать в блендере и добавить пюре кролика 20 гр</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">6+</button>
+                  <button type="button" class="btn btn-sm btn-primary">месяцев</button>
+                </div>
+                <small class="text-muted"></small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{ url_for('static', filename='image/food14.jpg') }}" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+            <div class="card-body">
+              <p class="fs-5 fw-lighter card-text">🥦 Сварить филе индейки, бульон слить и пробить блендером в пюре и добавить 0.5 ч.л. оливкового масла. Брокколи и кабачок отварить на пару..</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">8+</button>
+                  <button type="button" class="btn btn-sm btn-primary">месяцев</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+{% endblock %}

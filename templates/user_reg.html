@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Вход
+{% endblock %}
+
+{% block body %}
+<div class="px-4 py-5 my-5 text-center">
+    <div class="col-lg-4 mx-auto">
+        <div class="container">
+            {% if name %}
+                <br>
+                <p class="card-text mb-auto fs-4 fw-light">Пользователь, <strong>{{ name }}</strong>, успешно зарегистрирован</p><br>
+                <a href="/user/login" class="btn btn-primary">Войти в профиль</a><br>
+            {% else %}
+                <h1 class="display-6 fw-bolder text-center">Регистрация</h1>
+                <br/>
+                <form method="POST">
+                    {{ form.hidden_tag() }}
+                    {{ form.name.label(class="form-label fw-light fs-4") }}
+                    {{ form.name(class="form-control") }}
+
+                    {{ form.login.label(class="form-label fw-light fs-4") }}
+                    {{ form.login(class="form-control") }}
+
+                    {{ form.email.label(class="form-label fw-light fs-4") }}
+                    {{ form.email(class="form-control") }}
+
+                    {{ form.password_hash.label(class="form-label fw-light fs-4") }}
+                    {{ form.password_hash(class="form-control") }}
+
+                    {{ form.password_hash2.label(class="form-label fw-light fs-4") }}
+                    {{ form.password_hash2(class="form-control") }}
+
+                    {{ form.submit(class="btn btn-outline-primary") }}
+                </form>
+            {% endif %}
+            {% for msg in get_flashed_messages() %}
+                <div class="alert alert-info alert-dismissible fade show fw-light fs-4" role="alert">
+                  {{ msg }}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
